@@ -23,5 +23,10 @@
         android:text="Type Array List"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/buttonObject"
+        android:text="Type Object"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
