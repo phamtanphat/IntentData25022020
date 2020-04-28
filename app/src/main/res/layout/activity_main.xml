@@ -28,5 +28,10 @@
         android:text="Type Object"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/buttonSerializable"
+        android:text="Type Serializable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

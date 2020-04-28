@@ -27,9 +27,13 @@ public class Main2Activity extends AppCompatActivity {
 //            ArrayList<String> arrayList = intent.getStringArrayListExtra("arraylist");
 //            Log.d("BBB",arrayList.size() + "");
 //        }
+//        if (intent != null){
+//            ArrayList<Animal> meo = intent.getParcelableArrayListExtra("object");
+//            Log.d("BBB",meo.size() + "");
+//        }
         if (intent != null){
-            ArrayList<Animal> meo = intent.getParcelableArrayListExtra("object");
-            Log.d("BBB",meo.size() + "");
+            Business business = (Business) intent.getSerializableExtra("serializable");
+            Log.d("BBB",business.name + "");
         }
     }
 }
