@@ -13,9 +13,13 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         Intent intent = getIntent();
+//        if (intent != null){
+//            String value = intent.getStringExtra("chui");
+//            Log.d("BBB",value);
+//        }
         if (intent != null){
-            String value = intent.getStringExtra("chui");
-            Log.d("BBB",value);
+            String[] arrayStrings = intent.getStringArrayExtra("array");
+            Log.d("BBB",arrayStrings.length + "");
         }
     }
 }
