@@ -60,11 +60,13 @@ public class MainActivity extends AppCompatActivity {
         mBtnObject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ArrayList<Animal> animals = new ArrayList<>();
                 Animal meo = new Animal();
                 meo.name = "Con mèo";
                 meo.weight = 2;
+                animals.add(meo);
                 Intent intent = new Intent(MainActivity.this,Main2Activity.class);
-                intent.putExtra("object", meo);
+                intent.putExtra("object", animals);
                 startActivity(intent);
             }
         });
