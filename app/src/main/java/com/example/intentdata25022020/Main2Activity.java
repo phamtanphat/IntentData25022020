@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 public class Main2Activity extends AppCompatActivity {
 
     @Override
@@ -17,9 +19,13 @@ public class Main2Activity extends AppCompatActivity {
 //            String value = intent.getStringExtra("chui");
 //            Log.d("BBB",value);
 //        }
+//        if (intent != null){
+//            String[] arrayStrings = intent.getStringArrayExtra("array");
+//            Log.d("BBB",arrayStrings.length + "");
+//        }
         if (intent != null){
-            String[] arrayStrings = intent.getStringArrayExtra("array");
-            Log.d("BBB",arrayStrings.length + "");
+            ArrayList<String> arrayList = intent.getStringArrayListExtra("arraylist");
+            Log.d("BBB",arrayList.size() + "");
         }
     }
 }
