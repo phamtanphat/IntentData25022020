@@ -16,24 +16,24 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         Intent intent = getIntent();
 //        if (intent != null){
-//            String value = intent.getStringExtra("chui");
+//            String value = intent.getStringExtra("chuoi");
 //            Log.d("BBB",value);
 //        }
 //        if (intent != null){
 //            String[] arrayStrings = intent.getStringArrayExtra("array");
 //            Log.d("BBB",arrayStrings.length + "");
 //        }
-//        if (intent != null){
-//            ArrayList<String> arrayList = intent.getStringArrayListExtra("arraylist");
-//            Log.d("BBB",arrayList.size() + "");
-//        }
+        if (intent != null){
+            ArrayList<String> arrayList = intent.getStringArrayListExtra("arraylist");
+            Log.d("BBB",arrayList.size() + "");
+        }
 //        if (intent != null){
 //            ArrayList<Animal> meo = intent.getParcelableArrayListExtra("object");
 //            Log.d("BBB",meo.size() + "");
 //        }
-        if (intent != null){
-            Business business = (Business) intent.getSerializableExtra("serializable");
-            Log.d("BBB",business.name + "");
-        }
+//        if (intent != null){
+//            Business business = (Business) intent.getSerializableExtra("serializable");
+//            Log.d("BBB",business.name + "");
+//        }
     }
 }

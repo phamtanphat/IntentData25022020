@@ -12,8 +12,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,9 +34,10 @@ public class MainActivity extends AppCompatActivity {
         mBtnString.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,Main2Activity.class);
-                intent.putExtra("chuoi","Xin chao main 2");
-                startActivity(intent);
+//                Intent intent = new Intent(MainActivity.this,Main2Activity.class);
+//                intent.putExtra("chuoi","Xin chao main 2");
+//                startActivity(intent);
+                sendIntentData("chuoi","Xin chao main 2");
             }
         });
 
@@ -42,9 +45,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String[] strings = {"A","B","C","D","E","F"};
-                Intent intent = new Intent(MainActivity.this,Main2Activity.class);
-                intent.putExtra("array",strings);
-                startActivity(intent);
+//                Intent intent = new Intent(MainActivity.this,Main2Activity.class);
+//                intent.putExtra("array",strings);
+//                startActivity(intent);
+                sendIntentData("array",strings);
             }
         });
 
@@ -54,9 +58,10 @@ public class MainActivity extends AppCompatActivity {
                 ArrayList<String> arrayList = new ArrayList<>(
                         Arrays.asList("A","B","C","D")
                 );
-                Intent intent = new Intent(MainActivity.this,Main2Activity.class);
-                intent.putExtra("arraylist",arrayList);
-                startActivity(intent);
+//                Intent intent = new Intent(MainActivity.this,Main2Activity.class);
+//                intent.putExtra("arraylist",arrayList);
+//                startActivity(intent);
+                sendIntentData("arraylist",arrayList);
             }
         });
         mBtnObject.setOnClickListener(new View.OnClickListener() {
@@ -83,7 +88,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
+    //generate type
+    public <T> void sendIntentData(String key , T value){
+        Intent intent = new Intent(MainActivity.this,Main2Activity.class);
+        if (value instanceof String){
+            intent.putExtra(key, (String) value);
+        }
+        if (value instanceof String[]){
+            intent.putExtra(key, (String[]) value);
+        }
+        if (value instanceof ArrayList<?>){
+            if (value instanceof Object){
+                intent.putExtra(key, (ArrayList<String>) value);
+            }
+        }
+        startActivity(intent);
+    }
+
 
 }
